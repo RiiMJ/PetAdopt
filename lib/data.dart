@@ -39,4 +39,19 @@ List<Map> pets = [
     "color": "brown",
     "album": ["assets/catpic.jpeg"],
   },
+  
+  {
+    "image": "assets/dogpic.jpeg",
+    "category": "dog",
+    "name": "name",
+    "breed": "breed",
+    "location": "location",
+    "description": "description",
+    "id": "00002",
+    "owner_name": "ownane",
+    "sex": "female",
+    "age": "2 years",
+    "color": "brown",
+    "album": ["assets/dogpic.jpeg"],
+  },
 ];
