@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:project2/data.dart';
-import 'package:project2/widgets/custom_button.dart';
+//import 'package:project2/widgets/custom_button.dart';
 
 class detailsScreen extends StatelessWidget {
   String id;
@@ -18,23 +18,25 @@ class detailsScreen extends StatelessWidget {
     String location = '';
     String description = '';
     String owner_name = '';
+    String contact_no = '';
     String sex = '';
     String age = '';
     String color = '';
-    String album = '';
+    //String album = '';
 
     pets.forEach((pets) {
       if (pets['id'] == id) {
-        image = pets[''];
+        image = pets['image'];
         name = pets['name'];
         breed = pets['breed'];
         location = pets['location'];
         description = pets['description'];
         owner_name = pets['owner_name'];
+        contact_no = pets['contact_no'];
         sex = pets['sex'];
         age = pets['age'];
         color = pets['color'];
-        album = pets['album'];
+        //album = pets['album'];
       }
     });
     return Scaffold(
@@ -87,20 +89,26 @@ class detailsScreen extends StatelessWidget {
                               const SizedBox(
                                 width: 10,
                               ),
-                              /*Column(
+                              Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Text(                                  Text(
-                                    'owner',
+                                  Text(
+                                    owner_name,
+                                    textAlign: TextAlign.right,
                                     style: TextStyle(
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 16),
+                                      color: fadedBlack,
+                                      fontSize: 22,
+                                      fontWeight: FontWeight.bold,
+                                    ),
                                   ),
                                 ],
-                              ),*/
+                              ),
                               Expanded(child: Container()),
+                              const Icon(
+                                Icons.phone,
+                              ),
                               Text(
-                                'Dec 16, 2020',
+                                contact_no,
                                 style: TextStyle(
                                   color: fadedBlack,
                                   fontSize: 12,
@@ -147,14 +155,6 @@ class detailsScreen extends StatelessWidget {
                       Navigator.of(context).pop();
                     },
                   ),
-                  IconButton(
-                    icon: const Icon(
-                      CupertinoIcons.tray_arrow_down,
-                    ),
-                    onPressed: () {
-                      Navigator.of(context).pop();
-                    },
-                  )
                 ],
               ),
             ),
@@ -247,27 +247,6 @@ class detailsScreen extends StatelessWidget {
                   topLeft: Radius.circular(30),
                   topRight: Radius.circular(30),
                 ),
-              ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  /*Container(
-                    margin: const EdgeInsets.symmetric(horizontal: 20),
-                    child: CustomIconButton(
-                      iconData: CupertinoIcons.heart,
-                      onTap: () {},
-                    ),
-                  ),*/
-                  Expanded(
-                    child: Container(
-                      margin: const EdgeInsets.only(right: 20),
-                      child: CustomButton(
-                        label: 'Adopt',
-                        onTap: () {},
-                      ),
-                    ),
-                  ),
-                ],
               ),
             ),
           ),
