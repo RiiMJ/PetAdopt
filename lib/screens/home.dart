@@ -175,7 +175,7 @@ class _HomePageState extends State<HomePage> {
       selectList = turtle;
     }
 
-    for (int i = 0; i < categories.length; i++) {}
+
     return CarouselSlider(
         options: CarouselOptions(
           height: 400,
