@@ -84,7 +84,7 @@ class detailsScreen extends StatelessWidget {
                             children: [
                               const CircleAvatar(
                                 backgroundImage:
-                                    AssetImage('assets/profile.jpg'),
+                                    AssetImage('assets/profile.png'),
                               ),
                               const SizedBox(
                                 width: 10,
