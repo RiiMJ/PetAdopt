@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:project2/data.dart';
+import 'package:carousel_slider/carousel_slider.dart';
 //import 'package:project2/widgets/custom_button.dart';
 
 class detailsScreen extends StatelessWidget {
@@ -22,7 +23,7 @@ class detailsScreen extends StatelessWidget {
     String sex = '';
     String age = '';
     String color = '';
-    //String album = '';
+    List<String> album = [];
 
     pets.forEach((pets) {
       if (pets['id'] == id) {
@@ -36,7 +37,7 @@ class detailsScreen extends StatelessWidget {
         sex = pets['sex'];
         age = pets['age'];
         color = pets['color'];
-        //album = pets['album'];
+        album = pets['album'];
       }
     });
     return Scaffold(
@@ -56,12 +57,34 @@ class detailsScreen extends StatelessWidget {
                         Align(
                           alignment: Alignment.center,
                           child: Hero(
-                            tag: id,
-                            child: Image.asset(
+                              tag: id,
+                              /*child: Image.asset(
                               image,
                               width: size.width * 0.7,
-                            ),
-                          ),
+                            ),*/
+                              child: CarouselSlider(
+                                options: CarouselOptions(
+                                  height: 200,
+                                  enlargeCenterPage: true,
+                                  disableCenter: true,
+                                  viewportFraction: .8,
+                                ),
+                                items: album.map(
+                                  (url) {
+                                    return Container(
+                                      margin: const EdgeInsets.all(8.0),
+                                      child: ClipRRect(
+                                        borderRadius: const BorderRadius.all(
+                                            Radius.circular(5.0)),
+                                        child: Image.network(
+                                          url,
+                                          width: size.width * 0.7,
+                                        ),
+                                      ),
+                                    );
+                                  },
+                                ).toList(),
+                              )),
                         ),
                       ],
                     ),
