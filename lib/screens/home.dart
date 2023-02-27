@@ -189,7 +189,13 @@ class _HomePageState extends State<HomePage> {
                   data: selectList[index],
                   width: width,
                   onTap: () {
-                    detailsScreen(id: selectList[index]['id']);
+                    //detailsScreen(id: selectList[index]['id']);
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) =>
+                              detailsScreen(id: selectList[index]['id'])),
+                    );
                   },
                 )));
   }
