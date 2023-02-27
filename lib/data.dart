@@ -32,14 +32,14 @@ List<Map> pets = [
     "breed": "breed",
     "location": "location",
     "description": "description",
-    "id": "12345",
-    "owner_name": "ownane",
+    "id": "00001",
+    "owner_name": "owner name",
+    "contact_no": "12345",
     "sex": "male",
-    "age": "2",
+    "age": "3 months",
     "color": "brown",
     "album": ["assets/catpic.jpeg"],
   },
-  
   {
     "image": "assets/dogpic.jpeg",
     "category": "dog",
@@ -49,9 +49,11 @@ List<Map> pets = [
     "description": "description",
     "id": "00002",
     "owner_name": "ownane",
+    "contact_no": "12345",
     "sex": "female",
     "age": "2 years",
     "color": "brown",
     "album": ["assets/dogpic.jpeg"],
   },
 ];
+
