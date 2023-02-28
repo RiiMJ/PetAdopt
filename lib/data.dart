@@ -38,7 +38,7 @@ List<Map> pets = [
     "sex": "male",
     "age": "3 months",
     "color": "brown",
-    "album": ["assets/catpic.jpeg"],
+    "album": ["assets/catpic.jpeg", "assets/catpic1.jpeg", "assets/catpic2.jpeg"],
   },
   {
     "image": "assets/dogpic.jpeg",
@@ -53,7 +53,7 @@ List<Map> pets = [
     "sex": "female",
     "age": "2 years",
     "color": "brown",
-    "album": ["assets/dogpic.jpeg"],
+    "album": ["assets/dogpic.jpeg", "assets/dogpic1.jpeg", "assets/dogpic2.jpeg"],
   },
 ];
 
